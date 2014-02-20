@@ -13,10 +13,11 @@ namespace MvcMusicStore.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.Web.Mvc;
-    
+
+    [Bind(Exclude = "OrderId")]
     public partial class Order
     {
-        [Bind(Exclude ="OrderId")]
+        
         public Order()
         {
             this.OrderDetails = new HashSet<OrderDetail>();
